@@ -14,7 +14,7 @@ const handlerTabCategories = (categories) => {
     // console.log(category.category);
     const span = document.createElement("span");
     span.innerHTML = `
-        <a onclick="handlerShowCategories('${category.category_id}')" class="tab btn m-2 normal-case hover:bg-[#FF1F3D] hover:text-white">${category.category}</a> 
+        <a onclick="handlerShowCategories('${category.category_id}')" class="tab py-2 px-5 inline bg-[#25252526] text-[#252525b3] rounded font-medium text-base mt-2 normal-case hover:bg-[#FF1F3D] hover:text-white">${category.category}</a> 
         `;
     tabContainer.appendChild(span);
   });
@@ -49,13 +49,13 @@ const handlerShowCategories = async (categories_id) => {
                 </div>
                 </div>
           <div>
-            <h2 class="card-title">${categories.title}</h2>
+            <h2 class="card-title font-bold">${categories.title}</h2>
           <p class="flex items-center my-2">${
             categories.authors[0].profile_name
           } <span class="ml-2 ${
       categories.authors[0]?.verified ? "block" : "hidden"
     }"><img src="./images/blue-tick.png" alt="blue tick"></span></p>
-          <p>${categories.others.views}</p>
+          <p>${categories.others.views} views</p>
           </div>
         </div>
         `;
@@ -120,13 +120,13 @@ const sortByView = async () => {
                   </div>
                   </div>
             <div>
-              <h2 class="card-title">${categories.title}</h2>
+              <h2 class="card-title font-bold">${categories.title}</h2>
             <p class="flex items-center my-2">${
               categories.authors[0].profile_name
             } <span class="ml-2 ${
       categories.authors[0]?.verified ? "block" : "hidden"
     }"><img src="./images/blue-tick.png" alt="blue tick"></span></p>
-            <p>${categories.others.views}K</p>
+            <p>${categories.others.views}K views</p>
             </div>
           </div>
           `;
