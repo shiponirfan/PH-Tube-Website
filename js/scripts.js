@@ -67,8 +67,21 @@ const handlerShowCategories = async (categories_id) => {
         </div>
         `;
         cardContainer.appendChild(div);
-    })
+    });
 
+    const noContentContainer = document.getElementById('no-content-container');
+    if(!data.status){
+        noContentContainer.innerHTML = '';
+        const div = document.createElement('div');
+        div.classList = 'flex flex-col justify-center items-center';
+        div.innerHTML = `
+        <img src="./images/Icon.png" alt="icon">
+        <h2 class="font-bold text-3xl text-center mt-8">Oops!! Sorry, There is no <br> content here</h2>
+        `;
+        noContentContainer.appendChild(div);
+    }else{
+        noContentContainer.innerHTML = '';
+    }
 
 }
 
